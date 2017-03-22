@@ -11,7 +11,41 @@ body {
 img {
     display: block;
 }
-.gif{
+.gif,
+.gifDropdownList img{
     width: 200px;
     height: 100px;
 }
+
+ul.gifDropdownList { list-style: horizontal; margin: 0;
+  padding: 0;
+   margin-bottom: 10px; vertical-align: top;}
+ul.gifDropdownList > li { list-style: horizontal; margin: 5px;
+   display:block;
+    float: left;
+   vertical-align: top;}
+
+   #imageList{
+       width: 100%;
+       height: 500px;
+   }
+
+   #dropzone{
+       margin: auto;
+       position: relative;
+       width: 80%;
+       height: 200px;
+       background-color: green;
+       margin-top: 50px;
+       margin-bottom: 50px;
+   }
+
+   #moviezone{
+     margin: auto;
+     position: relative;
+     width: 80%;
+     height: 200px;
+     background-color: yellow;
+     margin-top: 50px;
+     margin-bottom: 50px;
+   }

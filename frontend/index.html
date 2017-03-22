@@ -7,7 +7,8 @@
     </style>
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js" charset="utf-8"></script>
-    <script src="http://luis-almeida.github.io/unveil/jquery.unveil.min.js" charset="utf-8"></script>
+    <script src="js/jquery-ui.js" charset="utf-8"></script>
+    <script src="https://raw.githubusercontent.com/luis-almeida/unveil/master/jquery.unveil.js" charset="utf-8"></script>
     <link rel="stylesheet" href="./css/style.css" />
 
     <script>
@@ -16,6 +17,17 @@
 <body>
   <div id="imageList">
   </div>
+
+  <div id="dropzone">
+    <ul id="movie_elements" class="ui-sortable">
+    </ul>
+  </div>
+
+  <div id="moviezone">
+  </div>
+
+
+
   <!--
     {% for image in images %}
         <a class="image" href="{{ image.src }}" style="width: {{ image.width }}px; height: {{ image.height }}px">
