@@ -60,6 +60,7 @@ def index():
 
     return send_from_directory('./static/images', filename)
 
+# url which gives a list of available images on the server
 @app.route('/images')
 def images():
     images = []
@@ -68,6 +69,9 @@ def images():
             images.append(filename)
     return jsonify({"images": images})
 
+# this route is provided with a list of gif image names (with paths) which are
+# then combined to one gif image. the name of the gif image is returned to the
+# front
 @app.route('/movie')
 def movie():
     args = request.args

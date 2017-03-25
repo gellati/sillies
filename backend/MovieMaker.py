@@ -1,5 +1,6 @@
 import imageio
 
+# class to combine animated gif images to one
 class MovieMaker:
 
     def __init__(self):
@@ -8,6 +9,8 @@ class MovieMaker:
     def setMovieFileName(self, name):
         self.moviefilename = name
 
+    # combines a given array of gif images into one gif animation and
+    # returns a string with the name of the image file
     def createMovie(self, images):
         gifs = []
         for f in images:
