@@ -11,36 +11,41 @@ body {
 img {
     display: block;
 }
-.gif,
-.gifDropdownList img{
+
+.gif{
     width: 200px;
     height: 100px;
 }
 
-ul.gifDropdownList { list-style: horizontal; margin: 0;
-  padding: 0;
-   margin-bottom: 10px; vertical-align: top;}
-ul.gifDropdownList > li { list-style: horizontal; margin: 5px;
-   display:block;
-    float: left;
-   vertical-align: top;}
+ul.gif-image-list,
+ul#gif-movie-elements { list-style: horizontal; margin: 0;
+  padding: 0; margin-bottom: 10px;
+  vertical-align: top;}
+ul.gif-image-list > li,
+ul#gif-movie-elements > li { list-style: horizontal;
+  margin: 5px; display: inline;
+  float: left; vertical-align: top;}
 
-   #imageList{
-       width: 100%;
-       height: 500px;
+   #gif-imagezone{
+     margin: auto;
+       width: 80%;
+       height: 300px;
+       background-color: #ccff99;
+       overflow: auto;
    }
 
-   #dropzone{
+   #gif-dropzone{
        margin: auto;
        position: relative;
        width: 80%;
-       height: 200px;
+       height: 300px;
        background-color: green;
        margin-top: 50px;
        margin-bottom: 50px;
+       overflow: auto;
    }
 
-   #moviezone{
+   #gif-moviezone{
      margin: auto;
      position: relative;
      width: 80%;
@@ -48,4 +53,9 @@ ul.gifDropdownList > li { list-style: horizontal; margin: 5px;
      background-color: yellow;
      margin-top: 50px;
      margin-bottom: 50px;
+   }
+
+   #button-generate-movie{
+       margin: auto;
+       width: 20%;
    }

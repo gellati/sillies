@@ -68,6 +68,17 @@ def images():
             images.append(filename)
     return jsonify({"images": images})
 
+@app.route('/movie')
+def movie():
+    args = request.args
+    gif_list = args['gifs'].split(",")
+    print gif_list
+    
+
+    movies = []
+    return jsonify({"data": "hello"})
+
+
 
 
 
