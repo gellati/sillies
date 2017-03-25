@@ -6,7 +6,7 @@ from flask import Flask, Response, request, abort, render_template_string, send_
 import image
 import StringIO
 from flask_cors import CORS, cross_origin
-
+from MovieMaker import MovieMaker
 
 app = Flask(__name__)
 CORS(app)
@@ -63,7 +63,7 @@ def index():
 @app.route('/images')
 def images():
     images = []
-    for root, dirs, files in os.walk('./static'):
+    for root, dirs, files in os.walk('./static/images'):
         for filename in [os.path.join(root, name) for name in files]:
             images.append(filename)
     return jsonify({"images": images})
@@ -72,13 +72,12 @@ def images():
 def movie():
     args = request.args
     gif_list = args['gifs'].split(",")
+
     print gif_list
-    
+    mm = MovieMaker()
+    movieFile = mm.createMovie(gif_list)
 
-    movies = []
-    return jsonify({"data": "hello"})
-
-
+    return jsonify({"movieFile": movieFile})
 
 
 

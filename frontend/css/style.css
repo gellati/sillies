@@ -17,6 +17,11 @@ img {
     height: 100px;
 }
 
+.gifmovie{
+  margin: auto;
+  width: 200px;
+}
+
 ul.gif-image-list,
 ul#gif-movie-elements { list-style: horizontal; margin: 0;
   padding: 0; margin-bottom: 10px;

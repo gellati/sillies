@@ -1,3 +1,4 @@
 flask
 Image
 flask_cors
+imageio

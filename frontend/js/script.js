@@ -49,14 +49,24 @@ $(document).ready(function() {
      console.log(movieRequestUrl)
 //     var imagesUrl = baseUrl + ":" + port + "/images"
 
-$.get(movieRequestUrl, function (data){
-var data = data.data;
-console.log(data);
-showMovie(data)
-})
-   }
+$.get(movieRequestUrl, function(data){
+  console.log("createMovie")
+  console.log(data.movieFile)
+  showMovie(data.movieFile)
 
-   function showMovie(movie){
+})
+//  console.log(data)
+//var movieFile = data.movieFile;
+ }
+
+   function showMovie(movieFile){
+     var movieElement = document.getElementById("gif-moviezone")
+     url = baseUrl + ":" + port + "/" + movieFile
+     console.log(url)
+     var imgElement = document.createElement("img");
+     imgElement.className = "gif gifmovie"
+     imgElement.setAttribute("src", url)
+     movieElement.appendChild(imgElement)
      console.log("showtime!")
    }
 
