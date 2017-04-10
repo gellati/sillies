@@ -17,6 +17,12 @@ img {
   height: 100px;
 }
 
+button{
+  width: 10px;
+  height: 10px;
+}
+
+
 .gifmovie{
   margin: auto;
   width: 200px;

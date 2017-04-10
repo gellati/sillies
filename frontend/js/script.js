@@ -1,7 +1,17 @@
+
+// removes elements
+function removeElement(divId){
+  var d = document.getElementById("dropitem-" + divId.toString())
+  d.parentNode.removeChild(d);
+}
+
+
 $(document).ready(function() {
   var baseUrl = "http://localhost"
   var port = "5000"
   var imagesUrl = baseUrl + ":" + port + "/images"
+
+  var dropzoneCounter = 0;
 
   // add event listener to movie creation button
   function addCreateMovieButtonEventListener(){
@@ -29,6 +39,7 @@ $(document).ready(function() {
         console.log(e)
         console.log(e.target.src)
         console.log(e.target.dataset.imgname)
+
         addImageToDropzone(e.target);
       }, false);
       liElement.appendChild(imgElement)
@@ -41,11 +52,27 @@ $(document).ready(function() {
   function addImageToDropzone(image){
     var dropzone = document.getElementById("gif-movie-elements")
     var liElement = document.createElement("li");
+    liElement.id = "dropitem-" + dropzoneCounter
     var imgClone = image.cloneNode(true);
-    liElement.appendChild(imgClone)
+    imgClone.className = "gif clone";
+
+    // image block contains both image and deletion button
+    var imgBlock = document.createElement("div")
+    imgBlock.appendChild(imgClone)
+
+    // add deletion functionality to element
+    var deleteButton = document.createElement("button")
+    deleteButton.innerHTML = "x";
+    var deleteString = "removeElement(" + dropzoneCounter + ")"
+    deleteButton.setAttribute("onclick", deleteString)
+    imgBlock.appendChild(deleteButton)
+
+    liElement.appendChild(imgBlock)
     dropzone.appendChild(liElement)
-    console.log("clicked" + this)
+
+    dropzoneCounter++;
   }
+
 
   // create movie from images in dropzone
   // sends a list of the gifs to the server as a get request
