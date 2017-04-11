@@ -21,6 +21,12 @@ $(document).ready(function() {
     })
   }
 
+  $( function() {
+    $( ".ui-sortable" ).sortable();
+    $( ".ui-sortable" ).disableSelection();
+  } );
+
+
   // when page loads, load also images from server. add event listeners
   // to images so that they are copied to the dropzone when clicked on
   function onPageLoad(images){
@@ -52,20 +58,21 @@ $(document).ready(function() {
   function addImageToDropzone(image){
     var dropzone = document.getElementById("gif-movie-elements")
     var liElement = document.createElement("li");
-    liElement.id = "dropitem-" + dropzoneCounter
+    liElement.id = "dropitem-" + dropzoneCounter;
     var imgClone = image.cloneNode(true);
     imgClone.className = "gif clone";
 
     // image block contains both image and deletion button
-    var imgBlock = document.createElement("div")
-    imgBlock.appendChild(imgClone)
+    var imgBlock = document.createElement("div");
+    imgBlock.appendChild(imgClone);
 
     // add deletion functionality to element
-    var deleteButton = document.createElement("button")
+    var deleteButton = document.createElement("button");
     deleteButton.innerHTML = "x";
-    var deleteString = "removeElement(" + dropzoneCounter + ")"
-    deleteButton.setAttribute("onclick", deleteString)
-    imgBlock.appendChild(deleteButton)
+    deleteButton.className = "delete-button";
+    var deleteString = "removeElement(" + dropzoneCounter + ")";
+    deleteButton.setAttribute("onclick", deleteString);
+    imgBlock.appendChild(deleteButton);
 
     liElement.appendChild(imgBlock)
     dropzone.appendChild(liElement)
